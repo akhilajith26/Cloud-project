@@ -1,0 +1,47 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="/static/style.css">
+
+</head>
+
+<body>
+    <h1 class="h1">TRANSLATE TO HINDI / CONVERT TEXT TO SPEECH</h1>
+    <h2 class="homepage">
+        <div class="main_box">
+
+
+
+            <div class="translation">
+                <form action="{{ url_for('translate_text') }}" method="post">
+                    <div class="msg">{{ msg }}</div>
+                    <textarea class="textboxes " id="to_translate" name="to_translate" type="text" rows="20" cols="40"
+                        placeholder="Enter a sentence to translate" class="to_translate" autocomplete="off"
+                        role="textbox" aria-autocomplete="list" aria-haspopup="true"
+                        style="border:inset 4px black;"></textarea></br></br>
+                    <label id="translated_op" name="translated_op" class="translated_op">
+                        {{ translated_op }}
+                    </label><br>
+
+                    <input class="button" type="submit" class="btn" value="Translate"></br></br>
+                </form>
+            </div>
+            <div class="texttospeech">
+
+                <form action="{{ url_for('text_to_speech') }}" method="post">
+                    <div class="msg">{{ msg }}</div>
+                    <textarea class="textboxes " id="to_speech" name="to_speech" type="text" rows="20" cols="40"
+                        placeholder="Enter a sentence to convert to speech" class="to_speech" autocomplete="off"
+                        role="textbox" aria-autocomplete="list" aria-haspopup="true"
+                        style="border:inset 4px black;"></textarea></br></br>
+                    <label id="notusing" name="notusing">
+                        {{ notusing }}
+                    </label><br><br>
+
+                    <input class="button" type="submit" class="btn" value="Convert to speech"></br></br>
+                </form>
+            </div>
+        </div>
+</body>
+
+</html>
